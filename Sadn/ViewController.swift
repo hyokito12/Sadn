@@ -11,6 +11,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var mainLoveButton: UIButton!
     @IBOutlet weak var mainRealityButton: UIButton!
     @IBOutlet weak var nightBackground: UIImageView!
+    @IBOutlet weak var castleBackground: UIImageView!
     @IBOutlet weak var princessCircle: UIButton!
     @IBOutlet weak var heroCircle: UIButton!
     @IBOutlet weak var richCircle: UIButton!
@@ -18,24 +19,26 @@ class ViewController: UIViewController {
     @IBOutlet weak var Comet1: UIButton!
     @IBOutlet weak var Comet2: UIButton!
     @IBOutlet weak var Comet3: UIButton!
-    
+    var counter : Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //The Game view will be put here
-//        openingLove()
-//        fadeInRepeat(fadeObject: mainLoveButton)
-        createLoveGame()
+        openingLove()
     }
-    
+    @IBAction func mainLoveActionButton(_ sender: Any) {
+        
+    }
     //Setting the Opening for Love Game
     func openingLove(){
         nightBackground.alpha = 0
+        castleBackground.alpha = 0
         mainLoveButton.setImage(UIImage(named: "Heart")?.withRenderingMode(.alwaysOriginal), for: .normal)
         self.view.backgroundColor = #colorLiteral(red: 0.0431372549, green: 0.1921568627, blue: 0.4588235294, alpha: 1)
         mainLoveButton.layer.backgroundColor = #colorLiteral(red: 0.4392156863, green: 0.003921568627, blue: 0.003921568627, alpha: 0)
         mainLoveButton.alpha = 0
         mainRealityButton.layer.backgroundColor = #colorLiteral(red: 0.4392156863, green: 0.003921568627, blue: 0.003921568627, alpha: 0)
+        fadeInRepeat(fadeObject: mainLoveButton)
     }
     
     //Setting the Opening for Reality Game
@@ -46,6 +49,7 @@ class ViewController: UIViewController {
         mainRealityButton.layer.backgroundColor = #colorLiteral(red: 0.4392156863, green: 0.003921568627, blue: 0.003921568627, alpha: 0)
         self.view.backgroundColor = #colorLiteral(red: 0.0431372549, green: 0.1921568627, blue: 0.4588235294, alpha: 1)
         mainRealityButton.alpha = 0
+        fadeInRepeat(fadeObject: mainRealityButton)
     }
     
     //Fading in Button Function
@@ -53,7 +57,7 @@ class ViewController: UIViewController {
         fadeObject.alpha = 0.3
         view.addSubview(fadeObject)
         
-        UIView.animate(withDuration: 0.8, delay: 0, options: [.repeat, .autoreverse], animations: {
+        UIView.animate(withDuration: 0.8, delay: 0, options: [.repeat, .autoreverse, .allowUserInteraction], animations: {
             fadeObject.alpha = 1.0
         }, completion: nil)
     }
@@ -79,28 +83,71 @@ class ViewController: UIViewController {
     
     //Creating the princess movement while waiting
     func movePrincess() {
-        UIView.animate(withDuration: 4.0,
-                   delay: 1.0,
-                   options: [.curveEaseInOut , .repeat, .autoreverse], animations: {
-                        self.princessCircle.center = CGPoint(x: 150, y: 240)
-                        },
-                   completion: nil
-                        )
-        }
+        UIView.animate(withDuration: 4.0, delay: 1.0, options: [.curveEaseInOut, .repeat, .autoreverse], animations: {
+            self.princessCircle.center = CGPoint(x: 150, y: 240)
+        }, completion: nil)
+    }
     
     //Creating the rich entry movement
     func moveEntryRich() {
-        UIView.animate(withDuration: 1.0,
-                       delay: 0.5,
-                       options: [.curveEaseOut], animations: {
-                        self.richCircle.center = CGPoint(x: 354, y: 855)
-        },
-                       completion: nil
-        )
+        UIView.animate(withDuration: 3.0, delay: 4.0, options: [.curveEaseOut], animations: {
+            self.richCircle.center = CGPoint(x: 354, y: 855)
+        }, completion: nil)
+    }
+    
+    //Creating Princess Avoid Hero
+    func avoidHero(){
+        UIButton.animate(withDuration: 3.0, delay: 4.0, animations: {            self.princessCircle.center = CGPoint(x: 354, y: 240)
+        }, completion: nil)
+    }
+    
+    //Creating Jumping Princess
+    func jumpPrincess(){
+        UIButton.animate(withDuration: 4.0, delay: 6.0, animations: {
+            self.heroCircle.center = CGPoint(x: 254, y: 240)
+            self.princessCircle.center = CGPoint(x: 354, y: 855)
+        }, completion: nil)
+    }
+    
+    //Creating Princess and Rich Go Out
+    func goOutRichPrincess(){
+        UIButton.animate(withDuration: 5.0, delay: 10.0, options: .curveEaseInOut, animations: {
+            self.princessCircle.center = CGPoint(x: 500, y: 815)
+            self.richCircle.center = CGPoint(x: 500, y: 815)
+        }, completion: nil)
     }
     
     //Creating the hero jumping movement action
-
+    func jumpHero(){
+        UIView.animate(withDuration: 0.5, animations: {
+            self.heroCircle.frame.origin.y -= 50
+        })
+    }
+    
+    //Jumping Button
+    @IBAction func upActionButton(_ sender: Any) {
+        jumpHero()
+        counter += 1
+        print(counter)
+        if counter == 12{
+            endingLoveGame()
+        }
+    }
+    
+    //Creating Ending of Love Game
+    func endingLoveGame(){
+        upButton.layer .removeAllAnimations()
+        upButton.alpha = 0
+        princessCircle.layer .removeAllAnimations()
+        UIView.animate(withDuration: 2.0, delay: 2.0,animations: {
+            self.heroCircle.center = CGPoint(x: 150, y: 240)
+            self.princessCircle.center = CGPoint(x: 264, y: 240)
+        }, completion: nil)
+        moveEntryRich()
+        avoidHero()
+        jumpPrincess()
+        goOutRichPrincess()
+    }
     
 
 }
