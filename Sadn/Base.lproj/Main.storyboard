@@ -61,8 +61,15 @@
                                 <rect key="frame" x="20" y="241" width="374" height="655"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vHN-dM-oFv">
+                                <rect key="frame" x="314" y="621" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="downActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DqF-Tu-wGN"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lcu-SL-fRh">
-                                <rect key="frame" x="314" y="650" width="80" height="80"/>
+                                <rect key="frame" x="314" y="462" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="upActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GHV-Y9-XAy"/>
@@ -77,6 +84,7 @@
                         <outlet property="Comet2" destination="08M-eC-uCG" id="F8P-n8-DDq"/>
                         <outlet property="Comet3" destination="BTE-bz-XZa" id="tId-SG-Bri"/>
                         <outlet property="castleBackground" destination="fUa-zz-z0R" id="qYk-hg-t53"/>
+                        <outlet property="downButton" destination="vHN-dM-oFv" id="Yh9-cl-8Cr"/>
                         <outlet property="heroCircle" destination="nG3-PD-mpv" id="cUV-aq-jFa"/>
                         <outlet property="mainLoveButton" destination="77Y-VJ-xNc" id="mov-tm-yZy"/>
                         <outlet property="mainRealityButton" destination="y5V-0I-q5N" id="Nia-6j-Gef"/>

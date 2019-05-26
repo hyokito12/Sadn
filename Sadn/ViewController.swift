@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var heroCircle: UIButton!
     @IBOutlet weak var richCircle: UIButton!
     @IBOutlet weak var upButton: UIButton!
+    @IBOutlet weak var downButton: UIButton!
     @IBOutlet weak var Comet1: UIButton!
     @IBOutlet weak var Comet2: UIButton!
     @IBOutlet weak var Comet3: UIButton!
@@ -26,8 +27,9 @@ class ViewController: UIViewController {
         //The Game view will be put here
         openingLove()
     }
+    
     @IBAction func mainLoveActionButton(_ sender: Any) {
-        
+        createLoveGame()
     }
     //Setting the Opening for Love Game
     func openingLove(){
@@ -64,6 +66,10 @@ class ViewController: UIViewController {
     
     //Creating the environment of Love Game
     func createLoveGame(){
+        mainLoveButton.layer .removeAllAnimations()
+        mainLoveButton.alpha = 0
+        nightBackground.alpha = 1
+        castleBackground.alpha = 1
         princessCircle.layer.cornerRadius = princessCircle.frame.width/2
         princessCircle.layer.backgroundColor = #colorLiteral(red: 0.4392156863, green: 0.003921568627, blue: 0.003921568627, alpha: 1)
         heroCircle.layer.cornerRadius = princessCircle.frame.width/2
@@ -74,10 +80,12 @@ class ViewController: UIViewController {
         Comet2.setImage(UIImage(named:"comet")?.withRenderingMode(.alwaysOriginal), for: .normal)
         Comet3.setImage(UIImage(named:"comet")?.withRenderingMode(.alwaysOriginal), for: .normal)
         upButton.setImage(UIImage(named:"upButton")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        downButton.setImage(UIImage(named:"downButton")?.withRenderingMode(.alwaysOriginal), for: .normal)
         fadeInRepeat(fadeObject: Comet1)
         fadeInRepeat(fadeObject: Comet2)
         fadeInRepeat(fadeObject: Comet3)
         fadeInRepeat(fadeObject: upButton)
+        fadeInRepeat(fadeObject: downButton)
         movePrincess()
     }
     
@@ -117,14 +125,19 @@ class ViewController: UIViewController {
         }, completion: nil)
     }
     
-    //Creating the hero jumping movement action
+    //Creating the hero jumping or downing movement action
     func jumpHero(){
         UIView.animate(withDuration: 0.5, animations: {
             self.heroCircle.frame.origin.y -= 50
         })
     }
+    func downHero(){
+        UIView.animate(withDuration: 0.5, animations: {
+            self.heroCircle.frame.origin.y += 50
+        })
+    }
     
-    //Jumping Button
+    //Go Up Button
     @IBAction func upActionButton(_ sender: Any) {
         jumpHero()
         counter += 1
@@ -134,10 +147,23 @@ class ViewController: UIViewController {
         }
     }
     
+    //Go Down Button
+    @IBAction func downActionButton(_ sender: Any) {
+        downHero()
+        counter -= 1
+        print(counter)
+        if counter == 12{
+            endingLoveGame()
+        }
+    }
+    
+    
     //Creating Ending of Love Game
     func endingLoveGame(){
         upButton.layer .removeAllAnimations()
         upButton.alpha = 0
+        downButton.layer .removeAllAnimations()
+        downButton.alpha = 0
         princessCircle.layer .removeAllAnimations()
         UIView.animate(withDuration: 2.0, delay: 2.0,animations: {
             self.heroCircle.center = CGPoint(x: 150, y: 240)
