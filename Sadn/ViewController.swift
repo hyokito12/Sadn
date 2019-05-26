@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var princessCircle: UIButton!
     @IBOutlet weak var heroCircle: UIButton!
     @IBOutlet weak var richCircle: UIButton!
+    @IBOutlet weak var upButton: UIButton!
     @IBOutlet weak var Comet1: UIButton!
     @IBOutlet weak var Comet2: UIButton!
     @IBOutlet weak var Comet3: UIButton!
@@ -21,10 +22,12 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //The Game view will be put here
 //        openingLove()
 //        fadeInRepeat(fadeObject: mainLoveButton)
         createLoveGame()
     }
+    
     //Setting the Opening for Love Game
     func openingLove(){
         nightBackground.alpha = 0
@@ -34,6 +37,7 @@ class ViewController: UIViewController {
         mainLoveButton.alpha = 0
         mainRealityButton.layer.backgroundColor = #colorLiteral(red: 0.4392156863, green: 0.003921568627, blue: 0.003921568627, alpha: 0)
     }
+    
     //Setting the Opening for Reality Game
     func openingReality(){
         nightBackground.alpha = 0
@@ -54,6 +58,7 @@ class ViewController: UIViewController {
         }, completion: nil)
     }
     
+    //Creating the environment of Love Game
     func createLoveGame(){
         princessCircle.layer.cornerRadius = princessCircle.frame.width/2
         princessCircle.layer.backgroundColor = #colorLiteral(red: 0.4392156863, green: 0.003921568627, blue: 0.003921568627, alpha: 1)
@@ -64,12 +69,15 @@ class ViewController: UIViewController {
         Comet1.setImage(UIImage(named:"comet")?.withRenderingMode(.alwaysOriginal), for: .normal)
         Comet2.setImage(UIImage(named:"comet")?.withRenderingMode(.alwaysOriginal), for: .normal)
         Comet3.setImage(UIImage(named:"comet")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        upButton.setImage(UIImage(named:"upButton")?.withRenderingMode(.alwaysOriginal), for: .normal)
         fadeInRepeat(fadeObject: Comet1)
         fadeInRepeat(fadeObject: Comet2)
         fadeInRepeat(fadeObject: Comet3)
+        fadeInRepeat(fadeObject: upButton)
         movePrincess()
     }
     
+    //Creating the princess movement while waiting
     func movePrincess() {
         UIView.animate(withDuration: 4.0,
                    delay: 1.0,
@@ -80,7 +88,8 @@ class ViewController: UIViewController {
                         )
         }
     
-    func moveRich() {
+    //Creating the rich entry movement
+    func moveEntryRich() {
         UIView.animate(withDuration: 1.0,
                        delay: 0.5,
                        options: [.curveEaseOut], animations: {
@@ -89,6 +98,10 @@ class ViewController: UIViewController {
                        completion: nil
         )
     }
+    
+    //Creating the hero jumping movement action
+
+    
 
 }
 
