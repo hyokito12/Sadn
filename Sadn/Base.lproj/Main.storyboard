@@ -235,6 +235,14 @@
                                     <action selector="rock18Action:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YDx-18-WY5"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cUS-Vh-5Pv">
+                                <rect key="frame" x="108" y="639" width="200" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="allFakeActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fw7-Sx-SDe"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -243,6 +251,7 @@
                         <outlet property="Comet1" destination="YUu-OV-TIa" id="hGt-mB-5VD"/>
                         <outlet property="Comet2" destination="08M-eC-uCG" id="F8P-n8-DDq"/>
                         <outlet property="Comet3" destination="BTE-bz-XZa" id="tId-SG-Bri"/>
+                        <outlet property="allFakeButton" destination="cUS-Vh-5Pv" id="Ui8-wW-TVr"/>
                         <outlet property="castleBackground" destination="fUa-zz-z0R" id="qYk-hg-t53"/>
                         <outlet property="downButton" destination="vHN-dM-oFv" id="Yh9-cl-8Cr"/>
                         <outlet property="heroCircle" destination="nG3-PD-mpv" id="cUV-aq-jFa"/>

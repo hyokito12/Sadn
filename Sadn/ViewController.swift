@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var Comet3: UIButton!
     @IBOutlet weak var transparantBackground: UIView!
     @IBOutlet weak var rejectedButton: UIButton!
-    
+    @IBOutlet weak var allFakeButton: UIButton!
     @IBOutlet weak var rock1: UIButton!
     @IBOutlet weak var rock2: UIButton!
     var counter : Int = 0
@@ -42,7 +42,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var rock16: UIButton!
     @IBOutlet weak var rock17: UIButton!
     @IBOutlet weak var rock18: UIButton!
-    
+    var pop : Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         //The Game view will be put here
@@ -59,6 +59,8 @@ class ViewController: UIViewController {
     
     //Setting the Opening for Love Game
     func openingLove(){
+        allFakeButton.alpha = 0
+        allFakeButton.layer .removeAllAnimations()
         rejectedButton.alpha = 0
         nightBackground.alpha = 0
         castleBackground.alpha = 0
@@ -106,6 +108,9 @@ class ViewController: UIViewController {
     
     //Creating the environment of Love Game
     func createLoveGame(){
+        heroCircle.alpha = 1
+        princessCircle.alpha = 1
+        richCircle.alpha = 1
         rock1.alpha = 0
         rock2.alpha = 0
         rock3.alpha = 0
@@ -228,6 +233,12 @@ class ViewController: UIViewController {
         openingReality()
     }
     
+    @IBAction func allFakeActionButton(_ sender: Any) {
+        allFakeButton.layer .removeAllAnimations()
+        allFakeButton.alpha = 0
+    }
+    
+    
     //Creating Ending of Love Game
     func endingLoveGame(){
         upButton.layer .removeAllAnimations()
@@ -317,60 +328,158 @@ class ViewController: UIViewController {
         fadeInRepeat(fadeObject: rock17)
         fadeInRepeat(fadeObject: rock18)
     }
+    
+    func endingRealityGame(){
+        allFakeButton.setImage(UIImage(named: "allFake")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        allFakeButton.layer.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0)
+        transparantBackground.alpha = 0.4
+        allFakeButton.alpha = 1
+        fadeInRepeat(fadeObject: allFakeButton)
+    }
 
     @IBAction func rock1Action(_ sender: Any) {
         rockDisappear(rockButton: rock1)
+        pop += 1
+        print(pop)
+        if pop == 18{
+            endingRealityGame()
+        }
     }
     @IBAction func rock2Action(_ sender: Any) {
         rockDisappear(rockButton: rock2)
+        pop += 1
+        print(pop)
+        if pop == 18{
+            endingRealityGame()
+        }
     }
     @IBAction func rock3Action(_ sender: Any) {
         rockDisappear(rockButton: rock3)
+        pop += 1
+        print(pop)
+        if pop == 18{
+            endingRealityGame()
+        }
     }
     @IBAction func rock4Action(_ sender: Any) {
         rockDisappear(rockButton: rock4)
+        pop += 1
+        print(pop)
+        if pop == 18{
+            endingRealityGame()
+        }
     }
     @IBAction func rock5Action(_ sender: Any) {
         rockDisappear(rockButton: rock5)
+        pop += 1
+        print(pop)
+        if pop == 18{
+            endingRealityGame()
+        }
     }
     @IBAction func rock6Action(_ sender: Any) {
         rockDisappear(rockButton: rock6)
+        pop += 1
+        print(pop)
+        if pop == 18{
+            endingRealityGame()
+        }
     }
     @IBAction func rock7Action(_ sender: Any) {
         rockDisappear(rockButton: rock7)
+        pop += 1
+        print(pop)
+        if pop == 18{
+            endingRealityGame()
+        }
     }
     @IBAction func rock8Action(_ sender: Any) {
         rockDisappear(rockButton: rock8)
+        pop += 1
+        print(pop)
+        if pop == 18{
+            endingRealityGame()
+        }
     }
     @IBAction func rock9Action(_ sender: Any) {
         rockDisappear(rockButton: rock9)
+        pop += 1
+        print(pop)
+        if pop == 18{
+            endingRealityGame()
+        }
     }
     @IBAction func rock10Action(_ sender: Any) {
         rockDisappear(rockButton: rock10)
+        pop += 1
+        print(pop)
+        if pop == 18{
+            endingRealityGame()
+        }
     }
     @IBAction func rock11Action(_ sender: Any) {
         rockDisappear(rockButton: rock11)
+        pop += 1
+        print(pop)
+        if pop == 18{
+            endingRealityGame()
+        }
     }
     @IBAction func rock12Action(_ sender: Any) {
         rockDisappear(rockButton: rock12)
+        pop += 1
+        print(pop)
+        if pop == 18{
+            endingRealityGame()
+        }
     }
     @IBAction func rock13Action(_ sender: Any) {
         rockDisappear(rockButton: rock13)
+        pop += 1
+        print(pop)
+        if pop == 18{
+            endingRealityGame()
+        }
     }
     @IBAction func rock14Action(_ sender: Any) {
         rockDisappear(rockButton: rock14)
+        pop += 1
+        print(pop)
+        if pop == 18{
+            endingRealityGame()
+        }
     }
     @IBAction func rock15Action(_ sender: Any) {
         rockDisappear(rockButton: rock15)
+        pop += 1
+        print(pop)
+        if pop == 18{
+            endingRealityGame()
+        }
     }
     @IBAction func rock16Action(_ sender: Any) {
         rockDisappear(rockButton: rock16)
+        pop += 1
+        print(pop)
+        if pop == 18{
+            endingRealityGame()
+        }
     }
     @IBAction func rock17Action(_ sender: Any) {
         rockDisappear(rockButton: rock17)
+        pop += 1
+        print(pop)
+        if pop == 18{
+            endingRealityGame()
+        }
     }
     @IBAction func rock18Action(_ sender: Any) {
         rockDisappear(rockButton: rock18)
+        pop += 1
+        print(pop)
+        if pop == 18{
+            endingRealityGame()
+        }
     }
     
     
