@@ -20,7 +20,28 @@ class ViewController: UIViewController {
     @IBOutlet weak var Comet1: UIButton!
     @IBOutlet weak var Comet2: UIButton!
     @IBOutlet weak var Comet3: UIButton!
+    @IBOutlet weak var transparantBackground: UIView!
+    @IBOutlet weak var rejectedButton: UIButton!
+    
+    @IBOutlet weak var rock1: UIButton!
+    @IBOutlet weak var rock2: UIButton!
     var counter : Int = 0
+    @IBOutlet weak var rock3: UIButton!
+    @IBOutlet weak var rock4: UIButton!
+    @IBOutlet weak var rock5: UIButton!
+    @IBOutlet weak var rock6: UIButton!
+    @IBOutlet weak var rock7: UIButton!
+    @IBOutlet weak var rock8: UIButton!
+    @IBOutlet weak var rock9: UIButton!
+    @IBOutlet weak var rock10: UIButton!
+    @IBOutlet weak var rock11: UIButton!
+    @IBOutlet weak var rock12: UIButton!
+    @IBOutlet weak var rock13: UIButton!
+    @IBOutlet weak var rock14: UIButton!
+    @IBOutlet weak var rock15: UIButton!
+    @IBOutlet weak var rock16: UIButton!
+    @IBOutlet weak var rock17: UIButton!
+    @IBOutlet weak var rock18: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,12 +52,18 @@ class ViewController: UIViewController {
     @IBAction func mainLoveActionButton(_ sender: Any) {
         createLoveGame()
     }
+    
+    @IBAction func mainRealityActionButton(_ sender: Any) {
+        createRealityGame()
+    }
+    
     //Setting the Opening for Love Game
     func openingLove(){
+        rejectedButton.alpha = 0
         nightBackground.alpha = 0
         castleBackground.alpha = 0
         mainLoveButton.setImage(UIImage(named: "Heart")?.withRenderingMode(.alwaysOriginal), for: .normal)
-        self.view.backgroundColor = #colorLiteral(red: 0.0431372549, green: 0.1921568627, blue: 0.4588235294, alpha: 1)
+        self.view.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         mainLoveButton.layer.backgroundColor = #colorLiteral(red: 0.4392156863, green: 0.003921568627, blue: 0.003921568627, alpha: 0)
         mainLoveButton.alpha = 0
         mainRealityButton.layer.backgroundColor = #colorLiteral(red: 0.4392156863, green: 0.003921568627, blue: 0.003921568627, alpha: 0)
@@ -45,11 +72,24 @@ class ViewController: UIViewController {
     
     //Setting the Opening for Reality Game
     func openingReality(){
+        Comet1.alpha = 0
+        Comet2.alpha = 0
+        Comet3.alpha = 0
+        heroCircle.alpha = 0
+        rejectedButton.layer .removeAllAnimations()
+        Comet1.layer .removeAllAnimations()
+        Comet2.layer .removeAllAnimations()
+        Comet3.layer .removeAllAnimations()
+        richCircle.alpha = 0
+        princessCircle.alpha = 0
+        castleBackground.alpha = 0
+        rejectedButton.alpha = 0
+        transparantBackground.alpha = 0
         nightBackground.alpha = 0
         mainRealityButton.setImage(UIImage(named: "Reality")?.withRenderingMode(.alwaysOriginal), for: .normal)
         mainLoveButton.layer.backgroundColor = #colorLiteral(red: 0.4392156863, green: 0.003921568627, blue: 0.003921568627, alpha: 0)
         mainRealityButton.layer.backgroundColor = #colorLiteral(red: 0.4392156863, green: 0.003921568627, blue: 0.003921568627, alpha: 0)
-        self.view.backgroundColor = #colorLiteral(red: 0.0431372549, green: 0.1921568627, blue: 0.4588235294, alpha: 1)
+        self.view.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         mainRealityButton.alpha = 0
         fadeInRepeat(fadeObject: mainRealityButton)
     }
@@ -66,6 +106,25 @@ class ViewController: UIViewController {
     
     //Creating the environment of Love Game
     func createLoveGame(){
+        rock1.alpha = 0
+        rock2.alpha = 0
+        rock3.alpha = 0
+        rock4.alpha = 0
+        rock5.alpha = 0
+        rock6.alpha = 0
+        rock7.alpha = 0
+        rock8.alpha = 0
+        rock9.alpha = 0
+        rock10.alpha = 0
+        rock11.alpha = 0
+        rock12.alpha = 0
+        rock13.alpha = 0
+        rock14.alpha = 0
+        rock15.alpha = 0
+        rock16.alpha = 0
+        rock17.alpha = 0
+        rock18.alpha = 0
+        
         mainLoveButton.layer .removeAllAnimations()
         mainLoveButton.alpha = 0
         nightBackground.alpha = 1
@@ -137,6 +196,14 @@ class ViewController: UIViewController {
         })
     }
     
+    func rejected(){
+        rejectedButton.setImage(UIImage(named: "rejected")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        rejectedButton.layer.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0)
+        transparantBackground.alpha = 0.4
+        rejectedButton.alpha = 1
+        fadeInRepeat(fadeObject: rejectedButton)
+    }
+    
     //Go Up Button
     @IBAction func upActionButton(_ sender: Any) {
         jumpHero()
@@ -157,6 +224,9 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func rejectedActionButton(_ sender: Any) {
+        openingReality()
+    }
     
     //Creating Ending of Love Game
     func endingLoveGame(){
@@ -173,8 +243,136 @@ class ViewController: UIViewController {
         avoidHero()
         jumpPrincess()
         goOutRichPrincess()
+        rejected()
     }
     
+    func createRock(rockObject:UIButton){
+        rockObject.layer.cornerRadius = rockObject.frame.width/2
+        rockObject.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+    }
+    
+    func rockDisappear(rockButton:UIButton){
+        rockButton.layer .removeAllAnimations()
+        UIView.animate(withDuration: 1.0, animations: {
+            rockButton.alpha = 0
+            }, completion: nil)
+    }
+    
+    func createRealityGame(){
+        mainRealityButton.layer .removeAllAnimations()
+        mainRealityButton.alpha = 0
+        self.view.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        rock1.alpha = 1
+        rock2.alpha = 1
+        rock3.alpha = 1
+        rock4.alpha = 1
+        rock5.alpha = 1
+        rock6.alpha = 1
+        rock7.alpha = 1
+        rock8.alpha = 1
+        rock9.alpha = 1
+        rock10.alpha = 1
+        rock11.alpha = 1
+        rock12.alpha = 1
+        rock13.alpha = 1
+        rock14.alpha = 1
+        rock15.alpha = 1
+        rock16.alpha = 1
+        rock17.alpha = 1
+        rock18.alpha = 1
+        createRock(rockObject: rock1)
+        createRock(rockObject: rock2)
+        createRock(rockObject: rock3)
+        createRock(rockObject: rock4)
+        createRock(rockObject: rock5)
+        createRock(rockObject: rock6)
+        createRock(rockObject: rock7)
+        createRock(rockObject: rock8)
+        createRock(rockObject: rock9)
+        createRock(rockObject: rock10)
+        createRock(rockObject: rock11)
+        createRock(rockObject: rock12)
+        createRock(rockObject: rock13)
+        createRock(rockObject: rock14)
+        createRock(rockObject: rock15)
+        createRock(rockObject: rock16)
+        createRock(rockObject: rock17)
+        createRock(rockObject: rock18)
+        fadeInRepeat(fadeObject: rock1)
+        fadeInRepeat(fadeObject: rock2)
+        fadeInRepeat(fadeObject: rock3)
+        fadeInRepeat(fadeObject: rock4)
+        fadeInRepeat(fadeObject: rock5)
+        fadeInRepeat(fadeObject: rock6)
+        fadeInRepeat(fadeObject: rock7)
+        fadeInRepeat(fadeObject: rock8)
+        fadeInRepeat(fadeObject: rock9)
+        fadeInRepeat(fadeObject: rock10)
+        fadeInRepeat(fadeObject: rock11)
+        fadeInRepeat(fadeObject: rock12)
+        fadeInRepeat(fadeObject: rock13)
+        fadeInRepeat(fadeObject: rock14)
+        fadeInRepeat(fadeObject: rock15)
+        fadeInRepeat(fadeObject: rock16)
+        fadeInRepeat(fadeObject: rock17)
+        fadeInRepeat(fadeObject: rock18)
+    }
 
+    @IBAction func rock1Action(_ sender: Any) {
+        rockDisappear(rockButton: rock1)
+    }
+    @IBAction func rock2Action(_ sender: Any) {
+        rockDisappear(rockButton: rock2)
+    }
+    @IBAction func rock3Action(_ sender: Any) {
+        rockDisappear(rockButton: rock3)
+    }
+    @IBAction func rock4Action(_ sender: Any) {
+        rockDisappear(rockButton: rock4)
+    }
+    @IBAction func rock5Action(_ sender: Any) {
+        rockDisappear(rockButton: rock5)
+    }
+    @IBAction func rock6Action(_ sender: Any) {
+        rockDisappear(rockButton: rock6)
+    }
+    @IBAction func rock7Action(_ sender: Any) {
+        rockDisappear(rockButton: rock7)
+    }
+    @IBAction func rock8Action(_ sender: Any) {
+        rockDisappear(rockButton: rock8)
+    }
+    @IBAction func rock9Action(_ sender: Any) {
+        rockDisappear(rockButton: rock9)
+    }
+    @IBAction func rock10Action(_ sender: Any) {
+        rockDisappear(rockButton: rock10)
+    }
+    @IBAction func rock11Action(_ sender: Any) {
+        rockDisappear(rockButton: rock11)
+    }
+    @IBAction func rock12Action(_ sender: Any) {
+        rockDisappear(rockButton: rock12)
+    }
+    @IBAction func rock13Action(_ sender: Any) {
+        rockDisappear(rockButton: rock13)
+    }
+    @IBAction func rock14Action(_ sender: Any) {
+        rockDisappear(rockButton: rock14)
+    }
+    @IBAction func rock15Action(_ sender: Any) {
+        rockDisappear(rockButton: rock15)
+    }
+    @IBAction func rock16Action(_ sender: Any) {
+        rockDisappear(rockButton: rock16)
+    }
+    @IBAction func rock17Action(_ sender: Any) {
+        rockDisappear(rockButton: rock17)
+    }
+    @IBAction func rock18Action(_ sender: Any) {
+        rockDisappear(rockButton: rock18)
+    }
+    
+    
 }
 

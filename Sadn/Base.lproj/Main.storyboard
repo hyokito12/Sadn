@@ -44,6 +44,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y5V-0I-q5N">
                                 <rect key="frame" x="82" y="323" width="250" height="250"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="mainRealityActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dh5-xD-NQf"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KFr-mG-le0">
                                 <rect key="frame" x="224" y="200" width="80" height="80"/>
@@ -61,6 +64,13 @@
                                 <rect key="frame" x="20" y="241" width="374" height="655"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lcu-SL-fRh">
+                                <rect key="frame" x="314" y="462" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="upActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GHV-Y9-XAy"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vHN-dM-oFv">
                                 <rect key="frame" x="314" y="621" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -68,11 +78,161 @@
                                     <action selector="downActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DqF-Tu-wGN"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lcu-SL-fRh">
-                                <rect key="frame" x="314" y="462" width="80" height="80"/>
+                            <view alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Hi-ER-gCJ">
+                                <rect key="frame" x="0.0" y="0.0" width="416" height="895"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3M3-aD-8sv">
+                                <rect key="frame" x="107" y="638" width="200" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
-                                    <action selector="upActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GHV-Y9-XAy"/>
+                                    <action selector="rejectedActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nFf-qn-ulw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B0u-rh-crU">
+                                <rect key="frame" x="40" y="80" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="rock1Action:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MNl-Dt-ejg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v7c-QR-7Iu">
+                                <rect key="frame" x="40" y="200" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="rock2Action:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qho-nQ-yiv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L1o-au-WSL">
+                                <rect key="frame" x="40" y="320" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="rock3Action:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sxg-pg-wT8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dtg-Z6-tQH">
+                                <rect key="frame" x="40" y="440" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="rock4Action:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qPg-FP-9eu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="phH-UM-Dcf">
+                                <rect key="frame" x="40" y="560" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="rock5Action:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rg6-cS-cq4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hp6-9V-RJQ">
+                                <rect key="frame" x="150" y="80" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="rock6Action:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hds-cn-KWz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zzf-Z3-Hmw">
+                                <rect key="frame" x="260" y="680" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="rock7Action:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BUA-NA-70d"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I9d-fr-yvi">
+                                <rect key="frame" x="150" y="200" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="rock8Action:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hfe-KZ-W6b"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hhG-Ei-LrV">
+                                <rect key="frame" x="150" y="320" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="rock9Action:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WZJ-da-wqL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tly-sV-3D7">
+                                <rect key="frame" x="150" y="440" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="rock10Action:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bUm-zd-TGT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6pd-SI-ZpD">
+                                <rect key="frame" x="150" y="560" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="rock11Action:" destination="BYZ-38-t0r" eventType="touchUpInside" id="C6V-wP-kc2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kfm-oU-H2h">
+                                <rect key="frame" x="260" y="80" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="rock12Action:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1rP-HQ-uWh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lMQ-nU-XQd">
+                                <rect key="frame" x="260" y="200" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="rock13Action:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8b5-sx-RXz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ij3-gU-y50">
+                                <rect key="frame" x="260" y="320" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="rock14Action:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wtp-QR-aPZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dRA-7L-xnB">
+                                <rect key="frame" x="260" y="440" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="rock15Action:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lfw-Fe-aXh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Evu-z6-u5s">
+                                <rect key="frame" x="260" y="560" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="rock16Action:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GEX-0O-kQa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5og-IJ-gkv">
+                                <rect key="frame" x="40" y="680" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="rock17Action:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xeT-RX-xVf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tD0-Tw-yRr">
+                                <rect key="frame" x="150" y="680" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="rock18Action:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YDx-18-WY5"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -90,7 +250,27 @@
                         <outlet property="mainRealityButton" destination="y5V-0I-q5N" id="Nia-6j-Gef"/>
                         <outlet property="nightBackground" destination="dwy-qb-VZc" id="iYv-ao-eDm"/>
                         <outlet property="princessCircle" destination="KFr-mG-le0" id="6nB-Sg-CGT"/>
+                        <outlet property="rejectedButton" destination="3M3-aD-8sv" id="auq-N4-ufL"/>
                         <outlet property="richCircle" destination="il3-XX-a43" id="MkO-Dn-mA6"/>
+                        <outlet property="rock1" destination="B0u-rh-crU" id="fXH-6V-7Om"/>
+                        <outlet property="rock10" destination="Tly-sV-3D7" id="HYS-iD-w7c"/>
+                        <outlet property="rock11" destination="6pd-SI-ZpD" id="j4u-7t-T9l"/>
+                        <outlet property="rock12" destination="Kfm-oU-H2h" id="wBA-0J-T0t"/>
+                        <outlet property="rock13" destination="lMQ-nU-XQd" id="guW-Af-hrI"/>
+                        <outlet property="rock14" destination="ij3-gU-y50" id="7QZ-MH-BoX"/>
+                        <outlet property="rock15" destination="dRA-7L-xnB" id="3fb-bu-bml"/>
+                        <outlet property="rock16" destination="Evu-z6-u5s" id="blp-3A-xeU"/>
+                        <outlet property="rock17" destination="5og-IJ-gkv" id="S8Y-4x-HAW"/>
+                        <outlet property="rock18" destination="tD0-Tw-yRr" id="D2w-RT-lqz"/>
+                        <outlet property="rock2" destination="v7c-QR-7Iu" id="bgm-3b-25o"/>
+                        <outlet property="rock3" destination="L1o-au-WSL" id="KCE-is-r94"/>
+                        <outlet property="rock4" destination="Dtg-Z6-tQH" id="PyK-gl-ZSs"/>
+                        <outlet property="rock5" destination="phH-UM-Dcf" id="9PR-zJ-c7t"/>
+                        <outlet property="rock6" destination="hp6-9V-RJQ" id="9ax-oq-ZjJ"/>
+                        <outlet property="rock7" destination="Zzf-Z3-Hmw" id="NO0-gR-guW"/>
+                        <outlet property="rock8" destination="I9d-fr-yvi" id="gsZ-fX-pU1"/>
+                        <outlet property="rock9" destination="hhG-Ei-LrV" id="WH4-jh-nxK"/>
+                        <outlet property="transparantBackground" destination="9Hi-ER-gCJ" id="z9a-ME-gf3"/>
                         <outlet property="upButton" destination="Lcu-SL-fRh" id="XJx-2X-fSa"/>
                     </connections>
                 </viewController>
