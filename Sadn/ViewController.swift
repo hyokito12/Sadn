@@ -26,7 +26,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var allFakeButton: UIButton!
     @IBOutlet weak var rock1: UIButton!
     @IBOutlet weak var rock2: UIButton!
-    var counter : Int = 0
     @IBOutlet weak var rock3: UIButton!
     @IBOutlet weak var rock4: UIButton!
     @IBOutlet weak var rock5: UIButton!
@@ -43,6 +42,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var rock16: UIButton!
     @IBOutlet weak var rock17: UIButton!
     @IBOutlet weak var rock18: UIButton!
+    var counter : Int = 0
     var pop : Int = 0
     var AudioPlayer = AVAudioPlayer()
     
@@ -50,12 +50,30 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //The Game view will be put here
-        let AssortedMusics = NSURL(fileURLWithPath: Bundle.main.path(forResource: "Rain_Heavy_Loud", ofType: "mp3")!)
-        AudioPlayer = try! AVAudioPlayer(contentsOf: AssortedMusics as URL)
+        openingLove()
+        playBackgroundMusic()
+    }
+    
+    func playCrushingRock(){
+        let crushingRock = NSURL(fileURLWithPath: Bundle.main.path(forResource: "crushingRock", ofType: "mp3")!)
+        AudioPlayer = try! AVAudioPlayer(contentsOf: crushingRock as URL)
+        AudioPlayer.prepareToPlay()
+        AudioPlayer.play()
+    }
+    
+    func playBackgroundMusic(){
+        let backgroundMusic = NSURL(fileURLWithPath: Bundle.main.path(forResource: "Rain_Heavy_Loud", ofType: "mp3")!)
+        AudioPlayer = try! AVAudioPlayer(contentsOf: backgroundMusic as URL)
         AudioPlayer.prepareToPlay()
         AudioPlayer.numberOfLoops = -1
         AudioPlayer.play()
-        openingLove()
+    }
+    
+    func playJumpSound(){
+        let jumpSound = NSURL(fileURLWithPath: Bundle.main.path(forResource: "jumping", ofType: "mp3")!)
+        AudioPlayer = try! AVAudioPlayer(contentsOf: jumpSound as URL)
+        AudioPlayer.prepareToPlay()
+        AudioPlayer.play()
     }
     
     @IBAction func mainLoveActionButton(_ sender: Any) {
@@ -220,30 +238,36 @@ class ViewController: UIViewController {
     //Go Up Button
     @IBAction func upActionButton(_ sender: Any) {
         jumpHero()
+        playJumpSound()
         counter += 1
         print(counter)
         if counter == 12{
             endingLoveGame()
+            playBackgroundMusic()
         }
     }
     
     //Go Down Button
     @IBAction func downActionButton(_ sender: Any) {
         downHero()
+        playJumpSound()
         counter -= 1
         print(counter)
         if counter == 12{
             endingLoveGame()
+            playBackgroundMusic()
         }
     }
     
     @IBAction func rejectedActionButton(_ sender: Any) {
         openingReality()
+        playBackgroundMusic()
     }
     
     @IBAction func allFakeActionButton(_ sender: Any) {
         allFakeButton.layer .removeAllAnimations()
         allFakeButton.alpha = 0
+        playBackgroundMusic()
     }
     
     
@@ -348,6 +372,7 @@ class ViewController: UIViewController {
     @IBAction func rock1Action(_ sender: Any) {
         rockDisappear(rockButton: rock1)
         pop += 1
+        playCrushingRock()
         print(pop)
         if pop == 18{
             endingRealityGame()
@@ -357,6 +382,7 @@ class ViewController: UIViewController {
         rockDisappear(rockButton: rock2)
         pop += 1
         print(pop)
+        playCrushingRock()
         if pop == 18{
             endingRealityGame()
         }
@@ -365,6 +391,7 @@ class ViewController: UIViewController {
         rockDisappear(rockButton: rock3)
         pop += 1
         print(pop)
+        playCrushingRock()
         if pop == 18{
             endingRealityGame()
         }
@@ -373,6 +400,7 @@ class ViewController: UIViewController {
         rockDisappear(rockButton: rock4)
         pop += 1
         print(pop)
+        playCrushingRock()
         if pop == 18{
             endingRealityGame()
         }
@@ -381,6 +409,7 @@ class ViewController: UIViewController {
         rockDisappear(rockButton: rock5)
         pop += 1
         print(pop)
+        playCrushingRock()
         if pop == 18{
             endingRealityGame()
         }
@@ -389,6 +418,7 @@ class ViewController: UIViewController {
         rockDisappear(rockButton: rock6)
         pop += 1
         print(pop)
+        playCrushingRock()
         if pop == 18{
             endingRealityGame()
         }
@@ -397,6 +427,7 @@ class ViewController: UIViewController {
         rockDisappear(rockButton: rock7)
         pop += 1
         print(pop)
+        playCrushingRock()
         if pop == 18{
             endingRealityGame()
         }
@@ -405,6 +436,7 @@ class ViewController: UIViewController {
         rockDisappear(rockButton: rock8)
         pop += 1
         print(pop)
+        playCrushingRock()
         if pop == 18{
             endingRealityGame()
         }
@@ -413,6 +445,7 @@ class ViewController: UIViewController {
         rockDisappear(rockButton: rock9)
         pop += 1
         print(pop)
+        playCrushingRock()
         if pop == 18{
             endingRealityGame()
         }
@@ -421,6 +454,7 @@ class ViewController: UIViewController {
         rockDisappear(rockButton: rock10)
         pop += 1
         print(pop)
+        playCrushingRock()
         if pop == 18{
             endingRealityGame()
         }
@@ -429,6 +463,7 @@ class ViewController: UIViewController {
         rockDisappear(rockButton: rock11)
         pop += 1
         print(pop)
+        playCrushingRock()
         if pop == 18{
             endingRealityGame()
         }
@@ -437,6 +472,7 @@ class ViewController: UIViewController {
         rockDisappear(rockButton: rock12)
         pop += 1
         print(pop)
+        playCrushingRock()
         if pop == 18{
             endingRealityGame()
         }
@@ -445,6 +481,7 @@ class ViewController: UIViewController {
         rockDisappear(rockButton: rock13)
         pop += 1
         print(pop)
+        playCrushingRock()
         if pop == 18{
             endingRealityGame()
         }
@@ -453,6 +490,7 @@ class ViewController: UIViewController {
         rockDisappear(rockButton: rock14)
         pop += 1
         print(pop)
+        playCrushingRock()
         if pop == 18{
             endingRealityGame()
         }
@@ -461,6 +499,7 @@ class ViewController: UIViewController {
         rockDisappear(rockButton: rock15)
         pop += 1
         print(pop)
+        playCrushingRock()
         if pop == 18{
             endingRealityGame()
         }
@@ -469,6 +508,7 @@ class ViewController: UIViewController {
         rockDisappear(rockButton: rock16)
         pop += 1
         print(pop)
+        playCrushingRock()
         if pop == 18{
             endingRealityGame()
         }
@@ -477,6 +517,7 @@ class ViewController: UIViewController {
         rockDisappear(rockButton: rock17)
         pop += 1
         print(pop)
+        playCrushingRock()
         if pop == 18{
             endingRealityGame()
         }
@@ -485,6 +526,7 @@ class ViewController: UIViewController {
         rockDisappear(rockButton: rock18)
         pop += 1
         print(pop)
+        playCrushingRock()
         if pop == 18{
             endingRealityGame()
         }
