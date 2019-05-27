@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 class ViewController: UIViewController {
     @IBOutlet weak var mainLoveButton: UIButton!
     @IBOutlet weak var mainRealityButton: UIButton!
@@ -43,9 +44,17 @@ class ViewController: UIViewController {
     @IBOutlet weak var rock17: UIButton!
     @IBOutlet weak var rock18: UIButton!
     var pop : Int = 0
+    var AudioPlayer = AVAudioPlayer()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //The Game view will be put here
+        let AssortedMusics = NSURL(fileURLWithPath: Bundle.main.path(forResource: "Rain_Heavy_Loud", ofType: "mp3")!)
+        AudioPlayer = try! AVAudioPlayer(contentsOf: AssortedMusics as URL)
+        AudioPlayer.prepareToPlay()
+        AudioPlayer.numberOfLoops = -1
+        AudioPlayer.play()
         openingLove()
     }
     
@@ -129,7 +138,6 @@ class ViewController: UIViewController {
         rock16.alpha = 0
         rock17.alpha = 0
         rock18.alpha = 0
-        
         mainLoveButton.layer .removeAllAnimations()
         mainLoveButton.alpha = 0
         nightBackground.alpha = 1
